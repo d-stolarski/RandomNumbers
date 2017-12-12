@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class Zad01 {
@@ -6,14 +5,19 @@ public class Zad01 {
 
         Random rand = new Random();
         int[] tab = new int[10];
-        int[] tab1 = new int[10];
 
         for (int i = 0; i < tab.length; i++) {
             tab[i] = rand.nextInt(10);
-            tab1[tab.length - 1 - i] = tab[i];
         }
-        System.out.println(Arrays.toString(tab) + Arrays.toString(tab1));
 
-
+        int j = 1;
+        for (int i = 0; i < tab.length * 2; i++) {
+            if(i < tab.length){
+                System.out.print(tab[i] + " ");
+            } else {
+                System.out.print(tab[i - j] + " ");
+                j += 2;
+            }
+        }
     }
 }
